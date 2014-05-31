@@ -1,0 +1,112 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "breakpoint";
+@import "jeet/index";
+
+$sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+//BREAKPOINTS
+
+$large-screen: 960px;
+$medium-screen: 600px;
+$small-screen: 100px;
+
+html {
+	background-color: #010C29;
+}
+
+body * {
+	//outline: 1px solid red;
+}
+
+body {
+	margin: 1em;
+	padding: 1em;
+	font-family: $sans-serif;
+	//border: 1px solid white;
+
+	@include breakpoint($large-screen) {
+		@include center(960px);
+	}
+}
+
+#main {
+	margin-top: 2em;
+}
+
+#links {
+	@include column(1/2);
+	//@include align(vertical);
+}
+
+#image {
+	@include column(1/2);
+}
+
+h1 {
+	color: white;
+	text-shadow: black 0.05em 0.05em 0.0em;
+	text-align: left;
+	border-bottom: .05em solid white;
+
+	@include breakpoint($small-screen) {
+		font-size: 1.5em;
+	}
+
+	@include breakpoint($medium-screen) {
+		font-size: 2em;
+	}
+	
+	@include breakpoint($large-screen) {
+		font-size: 2.5em;
+	}
+}
+
+ul {
+	margin-left: 3em;
+	list-style: disk;
+}
+
+li {
+	@include breakpoint($large-screen) {
+		margin-bottom: 2.5em;
+	}
+
+	@include breakpoint($medium-screen) {
+		margin-bottom: 2em;
+	}
+
+	@include breakpoint($small-screen) {
+		margin-bottom: 1.5em;
+	}
+}
+
+a {
+	color: white;
+	text-shadow: black 0.05em 0.05em 0.0em;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	@include breakpoint($small-screen) {
+		font-size: 1.5em;
+	}
+
+	@include breakpoint($medium-screen) {
+		font-size: 2em;
+	}
+	
+	@include breakpoint($large-screen) {
+		font-size: 2.5em;
+	}	
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
