@@ -7,7 +7,10 @@
 @import "breakpoint";
 @import "jeet/index";
 
+
+$background-color: #010C29;
 $sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$text-shadow: black 0.05em 0.05em 0.0em;
 
 //BREAKPOINTS
 
@@ -16,7 +19,7 @@ $medium-screen: 600px;
 $small-screen: 100px;
 
 html {
-	background-color: #010C29;
+	background-color: $background-color;
 }
 
 body * {
@@ -49,8 +52,7 @@ body {
 
 h1 {
 	color: white;
-	text-shadow: black 0.05em 0.05em 0.0em;
-	text-align: left;
+	text-shadow: $text-shadow;
 	border-bottom: .05em solid white;
 
 	@include breakpoint($small-screen) {
@@ -87,7 +89,7 @@ li {
 
 a {
 	color: white;
-	text-shadow: black 0.05em 0.05em 0.0em;
+	text-shadow: $text-shadow;
 
 	&:hover {
 		text-decoration: none;
