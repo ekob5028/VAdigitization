@@ -46,15 +46,13 @@ body {
 	@include column(1/2);
 	
 	position: relative;	
-	z-value: 10;
-
-	//@include align(vertical);
+	z-index: 1;
 }
 
 #image {
 	@include column(1/2);
 	position: relative;
-	z-value: 1;
+	z-index: -1;
 }
 
 h1 {
@@ -113,7 +111,6 @@ li {
 
 .formlink {
 	position: relative;	
-	z-value: 10;
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -137,7 +134,7 @@ li {
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	color: $background-color;
-	font-family:arial;
+	font-family:$sans-serif;
 	@include breakpoint($small-screen) {
 		font-size: 1em;
 	}
@@ -151,7 +148,7 @@ li {
 	}	
 	font-weight:bold;
 	font-style:normal;
-	height:50px;
+	//height:50px;
 	line-height:50px;
 	//width:100px;
 	text-decoration:none;
@@ -159,22 +156,30 @@ li {
 	text-shadow:1px 1px 0px #ffffff;
 	padding: .15em .5em;
 }
+
 .formlink:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
 	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
-
 }
 
 .disabled {
 	color: #404040;
-	font-size: 1.5em;
 	text-decoration: none;
+	padding-left: .5em;
+	@include breakpoint($small-screen) {
+		font-size: 1em;
+	}
+
+	@include breakpoint($medium-screen) {
+		font-size: 2em;
+	}
+	
+	@include breakpoint($large-screen) {
+		font-size: 2.5em;
+	}
 }
 
 img {
 	width: 100%;
 	height: auto;
-	position: relative;
-	z-value: 10;
-	
 }
