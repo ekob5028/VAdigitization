@@ -11,6 +11,7 @@
 $background-color: #010C29;
 $sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $text-shadow: black 0.05em 0.05em 0.0em;
+$serif: Georgia, Times, serif;
 
 //BREAKPOINTS
 
@@ -43,17 +44,23 @@ body {
 
 #links {
 	@include column(1/2);
+	
+	position: relative;	
+	z-value: 10;
+
 	//@include align(vertical);
 }
 
 #image {
 	@include column(1/2);
+	position: relative;
+	z-value: 1;
 }
 
 h1 {
 	color: white;
 	text-shadow: $text-shadow;
-	border-bottom: .05em solid white;
+	font-family: $serif;
 
 	@include breakpoint($small-screen) {
 		font-size: 1.5em;
@@ -66,11 +73,6 @@ h1 {
 	@include breakpoint($large-screen) {
 		font-size: 2.5em;
 	}
-}
-
-ul {
-	margin-left: 1em;
-	list-style: disk;
 }
 
 li {
@@ -87,9 +89,10 @@ li {
 	}
 }
 
-a {
+/*a {
 	color: white;
 	text-shadow: $text-shadow;
+	background-color: 
 
 	&:hover {
 		text-decoration: none;
@@ -106,13 +109,72 @@ a {
 	@include breakpoint($large-screen) {
 		font-size: 2.5em;
 	}	
+}*/
+
+.formlink {
+	position: relative;	
+	z-value: 10;
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color: $background-color;
+	font-family:arial;
+	@include breakpoint($small-screen) {
+		font-size: 1em;
+	}
+
+	@include breakpoint($medium-screen) {
+		font-size: 2em;
+	}
+	
+	@include breakpoint($large-screen) {
+		font-size: 2.5em;
+	}	
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	//width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+	padding: .15em .5em;
+}
+.formlink:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+
 }
 
 .disabled {
 	color: #404040;
+	font-size: 1.5em;
+	text-decoration: none;
 }
 
 img {
 	width: 100%;
 	height: auto;
+	position: relative;
+	z-value: 10;
+	
 }
